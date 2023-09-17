@@ -19,8 +19,8 @@ public class GraphqlApplication {
     RuntimeWiringConfigurer runtimeWiringConfigurer(CustomerService customerService) {
         return  builder -> {
             builder.type("Query", typeWiring -> typeWiring
-                    .dataFetcher("customers", env -> customerService.getCustomers())
-                    .dataFetcher("customerById", env -> customerService.getCustomerById(Integer.parseInt(env.getArgument("id"))))
+//                    .dataFetcher("customers", env -> customerService.getCustomers())
+//                    .dataFetcher("customerById", env -> customerService.getCustomerById(Integer.parseInt(env.getArgument("id"))))
                     .dataFetcher("profile", env -> customerService.getProfile(env.getSource()))
             );
         };
